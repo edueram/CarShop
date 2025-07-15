@@ -1,0 +1,33 @@
+.order-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+  .order-container h2 {
+    margin-top: 0;
+    color: #00334e;
+  }
+
+  .order-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .order-container li {
+    margin: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1rem;
+  }
+
+  .order-container a {
+    color: #007acc;
+    text-decoration: none;
+  }
+
+    .order-container a:hover {
+      text-decoration: underline;
+    }

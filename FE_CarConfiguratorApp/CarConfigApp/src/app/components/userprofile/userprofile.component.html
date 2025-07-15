@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="profile-container" *ngIf="profile">
+  <h2>👤 Mein Profil</h2>
+  <p><strong>User ID:</strong> {{ profile.id || profile.sub }}</p>
+  <p><strong>Username:</strong> {{ profile.username }}</p>
+  <p><strong>Name:</strong> {{ profile.firstName }} {{ profile.lastName }}</p>
+  <p><strong>Email:</strong> {{ profile.email }}</p>
+</div>
+
+<div *ngIf="!profile">
+  <p>Lade Profildaten...</p>
+</div>

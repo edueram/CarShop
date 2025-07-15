@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cade8dee-0a6b-4321-89ae-9d21f8f57612" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/envir" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/config/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/dto/InventoryCarResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/client/InventoryClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/config/RestClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/dto/InventoryOptionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/docker/pg_inventoryDB/initInventoryDB.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/InventoryServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/controller/InventoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/dto/InventoryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/dto/InventoryResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/model/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/repository/InventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/errami/mics/inventoryservice/service/InventoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/test/java/com/errami/mics/inventoryservice/InventoryServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/controller/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/dto/CarRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/dto/CarRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/dto/CarResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/dto/CarResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/model/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/model/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/model/CarOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/old_model/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/old_model/CarOption.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/service/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/java/com/errami/mics/carservice/service/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/car-service/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/car-service/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/docker/pg_carOptDB/initCarOptDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/docker/pg_carOptDB/initCarOptDB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/controller/CarOptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/controller/CarOptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/dto/CarOptRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/dto/CarOptRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/dto/CarOptResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/dto/CarOptResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/model/CarOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/model/CarOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/service/CarOptService.java" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/java/com/errami/mics/caroptionservice/service/CarOptService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carOption-service/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/carOption-service/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+        <option value="Class" />
+        <option value="Interface" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2yu6PJEzMMdU7mF7McJ3fcfb0QH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.api-gateway.keycloak-Container: Compose Deployment.executor": "Run",
+    "Docker.api-gateway.pg-keycloakDB: Compose Deployment.executor": "Run",
+    "Maven.api-gateway [clean].executor": "Run",
+    "Maven.car-service [clean].executor": "Run",
+    "Maven.carOption-service [clean].executor": "Run",
+    "Maven.order-service [clean].executor": "Run",
+    "Maven.order-service [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ApiGatewayApplication.executor": "Run",
+    "Spring Boot.CarOptionServiceApplication.executor": "Run",
+    "Spring Boot.CarServiceApplication.executor": "Run",
+    "Spring Boot.InventoryServiceApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "23",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Nkin/Edueram_Projects/CarConfiguration/BE_CarConfiguratorApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\Meine Ablage\Workspace\CarConfiguration\order-service" />
+      <recent name="I:\Meine Ablage\Workspace\CarConfiguration\carOption-service\src\main\java\com\errami\mics\caroptionservice\dto" />
+      <recent name="I:\Meine Ablage\Workspace\CarConfiguration\carOption-service\docker\pg_carOptDB" />
+      <recent name="I:\Meine Ablage\Workspace\CarConfiguration\carOption-service" />
+      <recent name="I:\Meine Ablage\Workspace\CarConfiguration" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\Meine Ablage\Workspace\CarConfiguration\car-service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.errami.mics.apigateway.config" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.InventoryServiceApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="car-service" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="car-service" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.apigateway.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarOptionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="carOption-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.caroptionservice.CarOptionServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.caroptionservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="car-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.carservice.CarServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.carservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventoryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="inventory-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.inventoryservice.InventoryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="order-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.orderservice.OrderServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.orderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.OrderServiceApplication" />
+        <item itemvalue="Spring Boot.CarServiceApplication" />
+        <item itemvalue="Spring Boot.CarOptionServiceApplication" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cade8dee-0a6b-4321-89ae-9d21f8f57612" name="Changes" comment="" />
+      <created>1750672085971</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750672085971</updated>
+      <workItem from="1750672086993" duration="10223000" />
+      <workItem from="1750699730657" duration="37221000" />
+      <workItem from="1750889287892" duration="6212000" />
+      <workItem from="1750926541575" duration="15466000" />
+      <workItem from="1750973862492" duration="4031000" />
+      <workItem from="1751011799072" duration="3776000" />
+      <workItem from="1751021081887" duration="4390000" />
+      <workItem from="1751299129995" duration="3164000" />
+      <workItem from="1751352625420" duration="24407000" />
+      <workItem from="1751464640697" duration="15778000" />
+      <workItem from="1751667854168" duration="665000" />
+      <workItem from="1751726950255" duration="3000" />
+      <workItem from="1751727056404" duration="4317000" />
+      <workItem from="1752054501222" duration="883000" />
+      <workItem from="1752254969553" duration="15000" />
+      <workItem from="1752254997774" duration="334000" />
+      <workItem from="1752315205700" duration="49828000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

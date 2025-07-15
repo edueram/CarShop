@@ -1,0 +1,19 @@
+<app-header></app-header>
+
+<div class="order-container">
+  <h2>📦 Meine Bestellungen</h2>
+
+  <ul *ngIf="orders.length; else noOrders">
+    <li *ngFor="let order of orders">
+      <strong>Bestellung:</strong> {{ order.id }} <br />
+      <strong>Datum:</strong> {{ order.orderDate | date:'short' }} <br />
+      <strong>Gesamtpreis:</strong> {{ order.finalPrice | currency }} <br />
+      <a [routerLink]="['/configuration', order.configurationId]">🔍 Konfigurationsdetails ansehen</a>
+    </li>
+  </ul>
+
+  <ng-template #noOrders>
+    <p>Keine Bestellungen gefunden.</p>
+  </ng-template>
+</div>
+

@@ -1,0 +1,13 @@
+services:
+  pg-notifDB:
+    image: postgres:16
+    container_name: pg_inventoryDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: inventoryDB
+    ports:
+      - "5437:5432"
+    volumes:
+      - ./data/pg_inventoryDB:/var/lib/postgresql/data
+      - ./docker/pg_inventoryDB/initInventoryDB.sql:/docker-entrypoint-initdb/init.sql

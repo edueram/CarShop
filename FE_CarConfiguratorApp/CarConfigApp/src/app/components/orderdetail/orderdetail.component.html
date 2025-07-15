@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="order-container" *ngIf="order; else loading">
+  <h2>🛒 Bestellung</h2>
+  <p><strong>Bestell-ID:</strong> {{ order.id }}</p>
+  <p>
+    <strong>Konfigurations-Link:</strong>
+    <a [routerLink]="['/configuration', order.configurationId]">
+      Konfiguration anzeigen
+    </a>
+  </p>
+  <p><strong>Preis:</strong> {{ order.finalPrice | currency }}</p>
+  <p><strong>Bestelldatum:</strong> {{ order.orderDate | date: 'medium' }}</p>
+</div>
+
+<ng-template #loading>
+  <div class="loading">
+    <p>Lade Bestelldaten...</p>
+  </div>
+</ng-template>

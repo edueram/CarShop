@@ -1,0 +1,126 @@
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f2f5f9;
+  min-height: 100vh;
+}
+
+/* Panel um alles herum */
+.selection-panel {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+  /* Überschriften */
+  .selection-panel h2 {
+    font-size: 1.5rem;
+    color: #00334e;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+/* Select Boxen */
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #eef3f7;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.option-item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+  max-width: 180px;
+}
+
+  .option-item label {
+    font-weight: 600;
+    color: #00334e;
+    margin-bottom: 0.3rem;
+  }
+
+  .option-item select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    transition: border 0.2s;
+  }
+
+    .option-item select:focus {
+      border: 1px solid #007acc;
+      outline: none;
+    }
+.options-price {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #004b70;
+}
+.selected-options {
+  margin-top: 1rem;
+  background-color: #eef3f7;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+  .selected-options p {
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    color: #00334e;
+  }
+
+  .selected-options ul {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .selected-options li {
+    margin-bottom: 0.3rem;
+  }
+
+/* Car Info */
+.car-info {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Preis-Anzeige */
+.price-summary {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #00334e;
+}
+
+  /* Save Button */
+  .price-summary button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+    .price-summary button:hover {
+      background-color: #005fa3;
+    }
+
+/* URL-Anzeige */
+.config-url {
+  margin-top: 1rem;
+  font-style: italic;
+  color: green;
+}

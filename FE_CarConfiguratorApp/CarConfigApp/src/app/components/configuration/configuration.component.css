@@ -1,0 +1,85 @@
+.config-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f2f5f9;
+  min-height: 100vh;
+  margin-top: 80px; /* Abstand unter dem Header */
+}
+.config-panel {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.config-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #00334e;
+  font-size: 1.6rem;
+}
+
+.config-link {
+  background-color: #eef3f7;
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  word-break: break-all;
+}
+
+  .config-link a {
+    color: #007acc;
+    text-decoration: none;
+  }
+
+.config-section {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+  .config-section h3 {
+    margin-top: 0;
+    color: #00334e;
+  }
+
+  .config-section ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .config-section li {
+    margin-bottom: 0.3rem;
+  }
+
+.options-total {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #004b70;
+}
+
+.config-total {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+  .config-total h3 {
+    margin-bottom: 0.5rem;
+    color: #00334e;
+  }
+
+  .config-total p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #004b70;
+  }
+
+.config-actions {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,13 @@
+services:
+  pg-carDB:
+    image: postgres:16
+    container_name: pg_carDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: carDB
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data/pg_carDB:/var/lib/postgresql/data
+      - ./docker/pg_carDB/initCarDB.sql:/docker-entrypoint-initdb.d/init.sql

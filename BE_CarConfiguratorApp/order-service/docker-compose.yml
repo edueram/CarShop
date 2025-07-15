@@ -1,0 +1,13 @@
+services:
+  pg-orderDB:
+    image: postgres:16
+    container_name: pg_orderDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: orderDB
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./data/pg_orderDB:/var/lib/postgresql/data
+      - ./docker/pg_orderDB/initOrderDB.sql:/docker-entrypoint-initdb.d/init.sql

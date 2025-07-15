@@ -1,0 +1,7 @@
+Ports:
+  api-gateway: 9000
+  car-service: 8081
+  carOption-service: 8082
+  order-service: 8083
+  keycloak: 8084
+  inventory: 8085

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\CarConfigApp",
+    "\\CarConfigApp\\dist\\CarConfigApp",
+    "\\CarConfigApp\\dist\\CarConfigApp\\browser",
+    "\\CarConfigApp\\src",
+    "\\CarConfigApp\\src\\app",
+    "\\CarConfigApp\\src\\app\\components\\configuration",
+    "\\CarConfigApp\\src\\app\\components\\homepage",
+    "\\CarConfigApp\\src\\app\\init",
+    "\\CarConfigApp\\src\\environments"
+  ],
+  "SelectedNode": "\\CarConfigApp\\src\\environments\\environment.prod.ts",
+  "PreviewInSolutionExplorer": false
+}

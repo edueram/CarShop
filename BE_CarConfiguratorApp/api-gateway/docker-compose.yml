@@ -1,0 +1,36 @@
+services:
+  pg_keycloakDB:
+    image: postgres:16
+    container_name: pg_keycloakDB
+    environment:
+      POSTGRES_DB: keycloakDB
+      POSTGRES_USER: hassan
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - ./data/pg_keycloakDB:/var/lib/postgresql/data
+    ports:
+      - "5436:5432"
+
+  keycloak_Container:
+    image: quay.io/keycloak/keycloak:24.0.1
+    container_name: keycloak_Cont
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_DB: postgres
+      KC_DB_URL_HOST: pg_keycloakDB
+      KC_DB_URL_PORT: 5432
+      KC_DB_URL_DATABASE: keycloakDB
+      KC_DB_USERNAME: hassan
+      KC_DB_PASSWORD: pass
+      KC_DB_SCHEMA: public
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
+
+
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./docker/keycloak/realms:/opt/keycloak/data/import
+    depends_on:
+      - pg_keycloakDB

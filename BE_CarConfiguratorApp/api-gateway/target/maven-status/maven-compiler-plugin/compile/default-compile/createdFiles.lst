@@ -1,0 +1,3 @@
+com\errami\mics\apigateway\ApiGatewayApplication.class
+com\errami\mics\apigateway\config\SecurityConfig.class
+com\errami\mics\apigateway\config\GatewayConfig.class

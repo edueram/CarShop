@@ -1,0 +1,55 @@
+<app-header></app-header>
+
+<div class="home-page-container">
+  <div class="content">
+    <div class="selection-panel">
+      <h2>Select a Car</h2>
+      <select [(ngModel)]="selectedCarId" (change)="onCarChange()">
+        <option [ngValue]="''">-- Select --</option>
+        <option *ngFor="let car of cars" [value]="car.id">
+          {{ car.make }} {{ car.model }} ({{ car.year }})
+        </option>
+      </select>
+
+      <div *ngIf="selectedCar" class="car-info">
+        <p><strong>Base Price:</strong> {{ selectedCar.basePrice | currency }}</p>
+      </div>
+
+      <h2>Select Options</h2>
+      <div class="options-container">
+        <div *ngFor="let type of optionTypes" class="option-item">
+          <label>{{ type | titlecase }}</label>
+          <select [ngModel]="selectedOptions[type]" (ngModelChange)="onOptionSelect(type, $event)">
+            <option [ngValue]="''">-- None --</option>
+            <option *ngFor="let option of getOptionsByType(type)" [ngValue]="option.id">
+              {{ option.option_value }} (+{{ option.additional_price | currency }})
+            </option>
+          </select>
+        </div>
+        <div class="options-price">
+          <p><strong>Options Total:</strong> {{ getOptionsTotal() | currency }}</p>
+        </div>
+
+      </div>
+      <div *ngIf="getSelectedOptions().length" class="selected-options">
+        <p><strong>Selected Options:</strong></p>
+        <ul>
+          <li *ngFor="let opt of getSelectedOptions()">
+            {{ opt.option_type | titlecase }}: {{ opt.option_value }} (+{{ opt.additional_price | currency }})
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="price-summary">
+        <p><strong>Total Price:</strong> {{ totalPrice | currency }}</p>
+        <button (click)="createConfiguration()">💾 Save Configuration</button>
+      </div>
+
+      <div *ngIf="configurationURL" class="config-url">
+        ✅ Configuration saved:
+        <a [href]="configurationURL" target="_blank">{{ configurationURL }}</a>
+      </div>
+    </div>
+  </div>
+</div>

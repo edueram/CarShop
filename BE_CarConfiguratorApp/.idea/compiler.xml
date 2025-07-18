@@ -17,17 +17,10 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
         <module name="carOption-service" />
-        <module name="car-service" />
         <module name="order-service" />
-      </profile>
-      <profile name="Annotation profile for inventory-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-        </processorPath>
+        <module name="car-service" />
         <module name="inventory-service" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -37,6 +30,7 @@
       <module name="car-service" options="-parameters" />
       <module name="carOption-service" options="-parameters" />
       <module name="inventory-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
     </option>
   </component>

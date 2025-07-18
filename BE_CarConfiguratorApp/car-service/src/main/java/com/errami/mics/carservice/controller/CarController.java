@@ -54,7 +54,7 @@ public class CarController {
 }
      */
 
-    @GetMapping("/stock/")
+    @GetMapping("/stock")
     public ResponseEntity<List<CarResponse>> getAllCars_exitsInStock() {
          List<CarResponse> carsInStock= carService.getAllCars_inStock();
          if(carsInStock.isEmpty()) {return ResponseEntity.noContent().build();}

@@ -5,8 +5,8 @@ CREATE TABLE IF NOT EXISTS car (
     make VARCHAR(255),
     model VARCHAR(255),
     year VARCHAR (255),
-    base_price DECIMAL),
-    sku_code VARCHAR(255) DEFAULT substr(md5(random()::text), 1, 20);
+    base_price DECIMAL,
+    sku_code VARCHAR(255) DEFAULT substr(md5(random()::text), 1, 20));
 
 INSERT INTO car ( make, model,year, base_price)
 VALUES ('BMW','5', '2020', 35000.00 ),

@@ -7,8 +7,7 @@ CREATE TABLE IF NOT EXISTS car_option (
     option_type VARCHAR(255),
     option_value VARCHAR(255),
     additional_price DECIMAL,
-    sku_code VARCHAR(255) DEFAULT substr(md5(random()::text), 1, 20);
-    );
+    sku_code VARCHAR(255) DEFAULT substr(md5(random()::text), 1, 20));
 
 -- Color
 INSERT INTO car_option ( option_type, option_value, additional_price) VALUES

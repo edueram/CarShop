@@ -21,7 +21,8 @@ public class Configuration {
     private UUID id;
 
     private String userId;
-
+    private String userName;
+    private String userEmail;
     private UUID carId;
 
     @ElementCollection

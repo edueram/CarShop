@@ -1,16 +1,15 @@
 package com.errami.mics.inventoryservice.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Entity
 @Data
-@RequiredArgsConstructor
+@NoArgsConstructor
 @Builder
+@AllArgsConstructor  // All
 @Table(name = "inventory")
 public class Inventory {
 

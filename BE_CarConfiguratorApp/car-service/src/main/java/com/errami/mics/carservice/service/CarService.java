@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
@@ -68,14 +69,29 @@ public class CarService {
 
     public InventoryCarResponse checkQuantiyInStock(String skuCode){
         String url = inventoryServerUrl + "/api/inventory/" + skuCode;
-        InventoryCarResponse inventoryCarResponse = restTemplate.getForObject(url, InventoryCarResponse.class);
-        // Optional: Fallback bei null
-        if (inventoryCarResponse == null) {
-            return new InventoryCarResponse(skuCode, BigDecimal.ZERO); // Beispiel
-        }
+       try {
+           InventoryCarResponse inventoryCarResponse = restTemplate.getForObject(url, InventoryCarResponse.class);
+           // Optional: Fallback bei null
+           if (inventoryCarResponse == null) {
+               log.warn("Inventory response for skuCode {} was null", skuCode);
+               return new InventoryCarResponse(skuCode, BigDecimal.ZERO); // Beispiel
+           }
 
-        return inventoryCarResponse;
+           return inventoryCarResponse;
+       } catch (HttpClientErrorException.NotFound e) {
+           log.info("Inventory response for skuCode {} was not found", skuCode);
+           return new InventoryCarResponse(skuCode, BigDecimal.ZERO);
+       }
+       catch (Exception ex) {
+           // Andere Fehler (Timeout, 500 etc.) loggen und ebenfalls 0 zurückgeben
+           log.error("Error fetching inventory for skuCode {}: {}", skuCode, ex.getMessage());
+           return new InventoryCarResponse(skuCode, BigDecimal.ZERO);
+       }
+
+
     }
+
+
 
     public List<CarResponse> getAllCars_inStock() {
         return carRepository.findAll().stream()
@@ -96,10 +112,12 @@ public class CarService {
     public Optional<CarResponse> getCarById_inStock(UUID id) {
 
         Optional <Car> optionalCar= carRepository.findById(id);
+        System.out.println("find car by id in car database: "+  optionalCar.isPresent());
         if (optionalCar.isEmpty()) return Optional.empty();
 
         Car car = optionalCar.get();
-        if (checkQuantiyInStock(car.getSkuCode()).quantity().compareTo(BigDecimal.ZERO) > 0){
+        if (checkQuantiyInStock(car.getSkuCode()).quantity().compareTo(BigDecimal.ZERO) <= 0){
+            System.out.println("Quantity in stock: "+checkQuantiyInStock(car.getSkuCode()).quantity());
             log.info("Car mit skuCode {} found, but not in stock", car.getSkuCode());
             return Optional.empty();
         }

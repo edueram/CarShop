@@ -1,0 +1,120 @@
+services:
+
+  ################ Api-Gateway ##############################
+
+  pg_keycloakDB:
+    image: postgres:16
+    container_name: pg_keycloakDB
+    environment:
+      POSTGRES_DB: keycloakDB
+      POSTGRES_USER: hassan
+      POSTGRES_PASSWORD: pass
+    volumes:
+      - ./data/pg_keycloakDB:/var/lib/postgresql/data
+    ports:
+      - "5436:5432"
+
+  keycloak_Container:
+    image: quay.io/keycloak/keycloak:24.0.1
+    container_name: keycloak_Cont
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_DB: postgres
+      KC_DB_URL_HOST: pg_keycloakDB
+      KC_DB_URL_PORT: 5432
+      KC_DB_URL_DATABASE: keycloakDB
+      KC_DB_USERNAME: hassan
+      KC_DB_PASSWORD: pass
+      KC_DB_SCHEMA: public
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+
+
+
+    ports:
+      - "8084:8080"
+    volumes:
+      - ./docker/keycloak/realms:/opt/keycloak/data/import
+    depends_on:
+      - pg_keycloakDB
+
+  ##################### Car-service ####################
+
+  pg-carDB:
+    image: postgres:16
+    container_name: pg_carDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: carDB
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data/pg_carDB:/var/lib/postgresql/data
+      - ./docker/pg_carDB/initCarDB.sql:/docker-entrypoint-initdb.d/init.sql
+
+  ######################## CarOption-service #######################
+
+  pg-carOptDB:
+    image: postgres:16
+    container_name: pg_carOptDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: caroptDB
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./data/pg_carOptDB:/var/lib/postgresql/data
+      - ./docker/pg_carOptDB/initCarOptDB.sql:/docker-entrypoint-initdb.d/init.sql
+
+  ################## Order-Service ###################################
+
+  pg-orderDB:
+    image: postgres:16
+    container_name: pg_orderDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: orderDB
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./data/pg_orderDB:/var/lib/postgresql/data
+      - ./docker/pg_orderDB/initOrderDB.sql:/docker-entrypoint-initdb.d/init.sql
+
+  ############### Inventory-service #################################
+
+  pg-inventoryDB:
+    image: postgres:16
+    container_name: pg_inventoryDB
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: hassan
+      POSTGRES_DB: inventoryDB
+    ports:
+      - "5437:5432"
+    volumes:
+      - ./data/pg_inventoryDB:/var/lib/postgresql/data
+      - ./docker/pg_inventoryDB/initInventoryDB.sql:/docker-entrypoint-initdb/init.sql
+
+  #############  Kafka  ############
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+  ################

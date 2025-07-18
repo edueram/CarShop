@@ -10,6 +10,6 @@ import org.springframework.web.service.annotation.HttpExchange;
 public interface InventoryClient {
 
     @GetExchange("/{skuCode}")
-    InventoryOptionResponse checkQuantiyInStock(@PathVariable String skuCode);
+    InventoryOptionResponse checkQuantiyInStock(@PathVariable("skuCode") String skuCode);
 
 }

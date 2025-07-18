@@ -9,6 +9,7 @@ import com.errami.mics.caroptionservice.repository.CarOptRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -55,30 +56,50 @@ public class CarOptService {
 
     //// AB hier mit Lager checken
    private final InventoryClient inventoryClient;
-    public InventoryOptionResponse  checkQuantiyInStock(String skuCode){
-   // Anders als bei car-service (dort habe ich Resttemplate )
-        InventoryOptionResponse inventoryOptionResponse = inventoryClient.checkQuantiyInStock(skuCode);
 
-        if (inventoryOptionResponse == null) {
-            log.info ("Part with number {} is not available.", skuCode);
-            return new InventoryOptionResponse(skuCode, BigDecimal.ZERO); // Beispiel
+
+    public InventoryOptionResponse checkQuantityInStock(String skuCode) {
+        try {
+            InventoryOptionResponse optionResponse = inventoryClient.checkQuantiyInStock(skuCode); // RestClient call
+            log.info("Inventory gefunden für skuCode {}: quantity = {}", skuCode, optionResponse.quantity());
+            return optionResponse;
+        } catch (HttpClientErrorException.NotFound notFoundEx) {
+            log.warn("Inventory mit skuCode {} nicht gefunden. Setze quantity = 0", skuCode);
+            return new InventoryOptionResponse(skuCode, BigDecimal.ZERO);
+        } catch (HttpClientErrorException ex) {
+            log.error("Inventory Fehler (HTTP) bei skuCode {}: {}", skuCode, ex.getMessage());
+            return new InventoryOptionResponse(skuCode, BigDecimal.ZERO);
+        } catch (Exception ex) {
+            log.error("Allgemeiner Fehler beim Inventory-Zugriff für skuCode {}: {}", skuCode, ex.getMessage());
+            return new InventoryOptionResponse(skuCode, BigDecimal.ZERO);
         }
-
-        return inventoryOptionResponse;
     }
+
+
+
+
+
 
     public List<CarOptResponse> getAllCarOpts_inStock() {
         return carOptRepository.findAll().stream()
-                .filter(carOpt -> checkQuantiyInStock(carOpt.getSkuCode()).quantity().compareTo(BigDecimal.ZERO) > 0)
+               /* */
+                .filter(carOpt -> {
+                    String skuCode = carOpt.getSkuCode();
+                    InventoryOptionResponse inv = checkQuantityInStock(skuCode);
+
+                    return inv.quantity().compareTo(BigDecimal.ZERO) > 0;
+                })
                 .map(carOpt -> new CarOptResponse(
                         carOpt.getId(),
                         carOpt.getOption_type(),
                         carOpt.getOption_value(),
                         carOpt.getAdditional_price(),
                         carOpt.getSkuCode()
-                    ))
+                ))
+
                 .toList();
     }
+
 
     public Optional<CarOptResponse> getCarOptById_inStock(UUID id) {
 
@@ -86,7 +107,7 @@ public class CarOptService {
         if (optionalCarOpt.isEmpty()) return Optional.empty();
 
         CarOption carOpt = optionalCarOpt.get();
-        if (checkQuantiyInStock(carOpt.getSkuCode()).quantity().compareTo(BigDecimal.ZERO) > 0){
+        if (checkQuantityInStock(carOpt.getSkuCode()).quantity().compareTo(BigDecimal.ZERO) <= 0){
             log.info("Car mit skuCode {} found, but not in stock", carOpt.getSkuCode());
             return Optional.empty();
         }

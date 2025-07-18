@@ -26,6 +26,8 @@ public class ConfigurationController {
         return new ConfigurationResponse(
                 config.getId(),
                 config.getUserId(),
+                config.getUserName(),
+                config.getUserEmail(),
                 config.getCarId(),
                 config.getSelectedOptionIds(),
                 config.getTotalPrice(),

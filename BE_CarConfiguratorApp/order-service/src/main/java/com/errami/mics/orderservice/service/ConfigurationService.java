@@ -26,6 +26,8 @@ public class ConfigurationService {
         Configuration configuration = Configuration.builder()
                 .id(configurationRequest.id())
                 .userId(configurationRequest.userId())
+                .userName(configurationRequest.userName())
+                .userEmail(configurationRequest.userEmail())
                 .carId(configurationRequest.carId())
                 .selectedOptionIds(configurationRequest.selectedOptionIds())
                 .totalPrice(configurationRequest.totalPrice())
@@ -41,7 +43,7 @@ public class ConfigurationService {
 
     public ConfigurationResponse getConfiguration(UUID configId) {
         Configuration configuration = configurationRepository.findById(configId).get();
-        return new ConfigurationResponse(configuration.getId(),configuration.getUserId(),configuration.getCarId(),configuration.getSelectedOptionIds(),configuration.getTotalPrice(),configuration.getCreatedAt(),configuration.isOrdered());
+        return new ConfigurationResponse(configuration.getId(),configuration.getUserId(), configuration.getUserName(),configuration.getUserEmail(),configuration.getCarId(),configuration.getSelectedOptionIds(),configuration.getTotalPrice(),configuration.getCreatedAt(),configuration.isOrdered());
 
     }
 
@@ -49,8 +51,10 @@ public class ConfigurationService {
         List<Configuration> configurations = configurationRepository.findAllByUserId(userId);
         List<ConfigurationResponse> configurationResponses = new ArrayList<>();
         return configurations.stream().map(
-                configuration ->  new ConfigurationResponse(configuration.getId(),configuration.getUserId(),configuration.getCarId(),
-                        configuration.getSelectedOptionIds(),configuration.getTotalPrice(),configuration.getCreatedAt(), configuration.isOrdered())).toList();
+                configuration ->  new ConfigurationResponse(configuration.getId(),configuration.getUserId(),
+                        configuration.getUserName(),configuration.getUserEmail(),configuration.getCarId(),
+                        configuration.getSelectedOptionIds(),configuration.getTotalPrice(),configuration.getCreatedAt(),
+                        configuration.isOrdered())).toList();
     }
 
     public ConfigurationResponse updateConfiguration(ConfigurationRequest configurationRequest) {
@@ -64,7 +68,10 @@ public class ConfigurationService {
         configurationRepository.save(configuration);
         log.info("Configuration updated {}", configuration);
 
-        return new ConfigurationResponse(configuration.getId(),configuration.getUserId(),configuration.getCarId(),configuration.getSelectedOptionIds(),configuration.getTotalPrice(), configuration.getCreatedAt(), configuration.isOrdered());
+        return new ConfigurationResponse(configuration.getId(),configuration.getUserId(),
+                configuration.getUserName(),configuration.getUserEmail()
+                ,configuration.getCarId(),configuration.getSelectedOptionIds(),
+                configuration.getTotalPrice(), configuration.getCreatedAt(), configuration.isOrdered());
 
     }
 

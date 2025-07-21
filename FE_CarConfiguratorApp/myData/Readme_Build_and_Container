@@ -1,0 +1,55 @@
+﻿
+Angular-Projekt → Docker-Container, der:
+	 --> die App vorab mit ng build baut
+	 --> ein kleines Image bereitstellt (mit nginx z. B.)
+	 --> im Browser unter http://localhost:4200 (oder 80/8080) läuft
+
+    Schritt 1: Angular-Projekt builden (local testen)
+	        --> im Ordner CarConfigApp:
+			       : npm install
+				   : ng build --configuration production
+			      --> erzeugt dist/
+
+   Schritt 2: Dockerfile erstellen (im Angular-Projektordner)
+           --> Create Dockerfile  
+								# Stage 1: Build Angular app
+								FROM node:20 AS builder
+
+								WORKDIR /app
+								COPY . .
+								RUN npm install
+								RUN npm run build -- --configuration production
+
+								# Stage 2: Serve with nginx
+								FROM nginx:stable-alpine
+
+								# Remove default nginx static files
+								RUN rm -rf /usr/share/nginx/html/*
+
+								# Copy compiled Angular app
+								COPY --from=builder /app/dist/car-config-frontend /usr/share/nginx/html
+
+								# Copy custom nginx config (optional)
+								# COPY nginx.conf /etc/nginx/nginx.conf
+
+								EXPOSE 80
+								CMD ["nginx", "-g", "daemon off;"]
+
+  
+  Schritt 3: Docker-image bauen
+             im Angular Projektordner: docker build -t car-config-frontend:latest .
+
+  Scrhitt 4: Container starten
+             docker run -d -p 4200:80 car-config-frontend:latest
+
+
+  Schritt 5 (optional): ersetzt Schritt 3 und 4 
+            --> create docker-compose.yml mit folgendem Inhalt und starte sie:
+						frontend:
+						  build:
+							context: ./car-config-frontend
+						  ports:
+							- "4200:80"
+						  depends_on:
+							- api-gateway
+

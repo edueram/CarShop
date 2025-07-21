@@ -34,6 +34,7 @@ public class SecurityConfig {
  public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
      return http
              .csrf(ServerHttpSecurity.CsrfSpec::disable)
+             .cors(Customizer.withDefaults()) // Eingefügt für Container
              .authorizeExchange(exchanges -> exchanges
                      .pathMatchers("/public/**").permitAll()
                      .pathMatchers(HttpMethod.OPTIONS).permitAll() // <- WICHTIG!

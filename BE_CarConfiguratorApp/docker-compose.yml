@@ -2,9 +2,9 @@ services:
 
   ################ Api-Gateway ##############################
 
-  pg_keycloakDB:
+  pgkeycloakDB:
     image: postgres:16
-    container_name: pg_keycloakDB
+    container_name: pgkeycloakDB
     environment:
       POSTGRES_DB: keycloakDB
       POSTGRES_USER: hassan
@@ -14,13 +14,13 @@ services:
     ports:
       - "5436:5432"
 
-  keycloak_Container:
+  keycloak:
     image: quay.io/keycloak/keycloak:24.0.1
-    container_name: keycloak_Cont
+    container_name: keycloak
     command: ["start-dev", "--import-realm"]
     environment:
       KC_DB: postgres
-      KC_DB_URL_HOST: pg_keycloakDB
+      KC_DB_URL_HOST: pgkeycloakDB
       KC_DB_URL_PORT: 5432
       KC_DB_URL_DATABASE: keycloakDB
       KC_DB_USERNAME: hassan
@@ -32,11 +32,11 @@ services:
 
 
     ports:
-      - "8084:8080"
+      - "8080:8080"
     volumes:
       - ./docker/keycloak/realms:/opt/keycloak/data/import
     depends_on:
-      - pg_keycloakDB
+      - pgkeycloakDB
 
   ##################### Car-service ####################
 
@@ -117,4 +117,86 @@ services:
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-  ################
+  ###### car service ######
+  car-service:
+    build:
+      context: ./car-service
+    ports:
+      - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - pg-carDB
+
+  ##### carOption service ##
+  caroption-service:
+    build:
+      context: ./carOption-service
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - pg-carOptDB
+
+  ##### inventory service ##
+  inventory-service:
+    build:
+      context: ./inventory-service
+    ports:
+      - "8085:8085"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - pg-inventoryDB
+
+  ##### notification service ##
+  notification-service:
+    build:
+      context: ./notification-service
+    ports:
+      - "8086:8086"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - kafka
+
+  ##### order service ##
+  order-service:
+    build:
+      context: ./order-service
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - pg-orderDB
+      - kafka
+
+  ####  api gateway ####
+  gateway-service:
+    build:
+      context: ./api-gateway
+    ports:
+      - "9000:9000"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    depends_on:
+      - keycloak
+      - car-service
+      - order-service
+      - caroption-service
+      - kafka
+      - zookeeper
+      - inventory-service
+      - notification-service
+
+  ########## Frontend ########
+
+  frontend:
+    build:
+      context: ./frontend_CarConfig
+    ports:
+      - "4200:80"
+    depends_on:
+      - gateway-service

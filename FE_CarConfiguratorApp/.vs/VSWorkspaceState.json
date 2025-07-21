@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CarConfigApp",
     "\\CarConfigApp\\dist\\CarConfigApp",
     "\\CarConfigApp\\dist\\CarConfigApp\\browser",
-    "\\CarConfigApp\\src",
+    "\\CarConfigApp\\public\\assets",
     "\\CarConfigApp\\src\\app",
     "\\CarConfigApp\\src\\app\\components\\configuration",
     "\\CarConfigApp\\src\\app\\components\\homepage",
     "\\CarConfigApp\\src\\app\\init",
-    "\\CarConfigApp\\src\\environments"
+    "\\CarConfigApp\\src\\environments",
+    "\\myData"
   ],
-  "SelectedNode": "\\CarConfigApp\\src\\environments\\environment.prod.ts",
+  "SelectedNode": "\\myData\\Readme_Build_and_Container",
   "PreviewInSolutionExplorer": false
 }

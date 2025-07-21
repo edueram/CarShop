@@ -1,0 +1,50 @@
++ Docker Images and Kubernetes
+
+    0 * Create in addition to application.properties application-docker.properties for each service
+          --> instead of localhost you have to use service name of in docker container
+                    (i.e instead of http://localhost:8081 user http://car-service:8081)
+          --> instead of external ports of containers use the origin port for example 5432 instead of 5435 (if in container: "5435:5432")
+          --> because services intern of Docker communicate over origin ports
+
+
+    1 * Create Dockerfile (For Build) for each service (i.e. in order-service)
+         # Stage 1: Build
+         FROM eclipse-temurin:17 as builder
+         WORKDIR /app
+         COPY . .
+         RUN ./mvnw clean package -DskipTests
+
+         # Stage 2: Run
+         FROM eclipse-temurin:17
+         WORKDIR /app
+         COPY --from=builder /app/target/order-service-*.jar app.jar
+         ENTRYPOINT ["java", "-jar", "app.jar"]
+
+
+    2 * File: Build-images-of-services.sh
+     ** Build images of all service (car-service, api-gateway, ...)
+     ** You can else use 'docker build -t car-service:latest ./car-service' to build a single service
+
+    3 * File docker-compose.yml
+      ** runs all container for databases, Keycloak, Kafka
+      ** runs all container for services (car, order).
+                services:
+                  order-service:
+                    image: order-service:latest
+                    ports:
+                      - "8081:8081"
+
+
+    4 * ---------->   instead of 2 and then 3  <---------
+        ** You can also use as alternative building services and also running container in "docker-compose.yml" (in root)
+        ** Use he following compose snippet for each service:
+                 services:
+                    car-service:
+                      build:
+                        context: ./car-service
+                      ports:
+                        - "8081:8081"
+                      environment:
+                        - SPRING_PROFILES_ACTIVE=docker
+                      depends_on:
+                        - pg-carDB

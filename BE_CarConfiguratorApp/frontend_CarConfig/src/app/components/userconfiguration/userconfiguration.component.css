@@ -1,0 +1,50 @@
+.config-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+  .config-container h2 {
+    margin-bottom: 24px;
+    color: #333;
+  }
+
+  .config-container ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .config-container li {
+    background: #fff;
+    margin-bottom: 16px;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: left;
+  }
+
+    .config-container li a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #1976d2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+      .config-container li a:hover {
+        text-decoration: underline;
+      }
+
+.ordered {
+  color: green;
+  font-weight: bold;
+}
+
+.not-ordered {
+  color: #b00020;
+  font-weight: bold;
+}

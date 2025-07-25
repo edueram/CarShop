@@ -1,9 +1,14 @@
 //const serverUrl = 'http://ec2-51-21-129-236.eu-north-1.compute.amazonaws.com';
-const serverUrl = 'http://localhost';
+
+//onst apiUrl='http://localhost:9000' // development
+//const keycloakUrl= 'http://localhost:8080' // development
+
+const apiUrl='http://gateway-service:9000' //deployment
+const keycloakUrl= 'http://keycloak:8080' // deployment
 
 export const environment = {
   production: true,
-  apiUrl: `${serverUrl}:9000`,
-  keycloakUrl: `${serverUrl}:8080`
+  apiUrl: apiUrl,
+  keycloakUrl: keycloakUrl
 };
 

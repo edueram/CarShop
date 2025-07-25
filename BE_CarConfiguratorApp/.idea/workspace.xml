@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cade8dee-0a6b-4321-89ae-9d21f8f57612" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/FE_CarConfiguratorApp/FileContentIndex/03e5c124-e6c2-4082-9a59-e8ee19841dc0.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/FE_CarConfiguratorApp/FileContentIndex/3a83c776-fe0f-4c24-abae-ab9de7fd5203.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/FE_CarConfiguratorApp/FileContentIndex/4a107f60-0d4b-4ea3-8ee1-76f5d635660f.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/FE_CarConfiguratorApp/FileContentIndex/76489e59-eb89-4beb-82e5-4dfec81e032d.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/FE_CarConfiguratorApp/FileContentIndex/e41de352-c36a-425f-85b4-979c6d1a19a3.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/.angular/cache/20.1.1/CarConfigApp/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/.angular/cache/20.1.1/CarConfigApp/.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/chunk-NJYO2FLU.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/chunk-P4TAIVSS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/main-SEZYSAFW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/polyfills-B6TNHZQ6.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/polyfills-B6TNHZQ6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/styles-Z5UYKNDX.css" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/browser/styles-Z5UYKNDX.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/prerendered-routes.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/dist/CarConfigApp/prerendered-routes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/src/app/init/keycloak-init.factory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/src/app/init/keycloak-init.factory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FE_CarConfiguratorApp/CarConfigApp/src/environments/environment.ts" afterDir="false" />
-    </list>
+    <list default="true" id="cade8dee-0a6b-4321-89ae-9d21f8f57612" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +78,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Nkin/Edueram_Projects/CarShop/BE_CarConfiguratorApp/myData",
+    "last_opened_file_path": "C:/Users/Nkin/Edueram_Projects/CarShop/BE_CarConfiguratorApp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,8 +95,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\myData" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp" />
+      <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\myData" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\order-service\src\main\resources" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\notification-service\src\main\resources" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\inventory-service\src\main\resources" />
@@ -301,6 +283,8 @@
       <workItem from="1752254997774" duration="334000" />
       <workItem from="1752315205700" duration="49828000" />
       <workItem from="1752585127806" duration="83112000" />
+      <workItem from="1753084953046" duration="2985000" />
+      <workItem from="1753438835425" duration="10441000" />
     </task>
     <servers />
   </component>

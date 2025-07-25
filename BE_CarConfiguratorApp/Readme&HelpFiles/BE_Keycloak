@@ -1,6 +1,6 @@
 + Keyclock
     * After running keycloak container you can make some setting (like adding realm, client, url, ..)
-      -> Enter in browser the url to your container (i.e.: localhost:8084)
+      -> Enter in browser the url to your container (i.e.: localhost:8080)
       -> Enter login and password (admin, admin)
       -> Create new Realm--- use the same name like in backend and Frontend (i.e. api-gateway application.properties)
       -> Create new client (i.e Angular Client)

@@ -14,6 +14,7 @@ RUN rm -rf /usr/share/nginx/html/*
 
 # Copy compiled Angular app
 COPY --from=builder /app/dist/CarConfigApp/browser /usr/share/nginx/html
+COPY ./nginx.conf /etc/nginx/nginx.conf
 
 # Copy custom nginx config (optional)
 # COPY nginx.conf /etc/nginx/nginx.conf

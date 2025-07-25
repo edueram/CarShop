@@ -9,7 +9,7 @@
 
     1 * Create Dockerfile (For Build) for each service (i.e. in order-service)
          # Stage 1: Build
-         FROM eclipse-temurin:17 as builder
+         FROM eclipse-temurin:17 as builder  <---- Hier soll mvn:eclipse.....? verwendet werden
          WORKDIR /app
          COPY . .
          RUN ./mvnw clean package -DskipTests

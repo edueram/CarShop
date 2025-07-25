@@ -5,11 +5,36 @@ Angular-Projekt → Docker-Container, der:
 	 --> ein kleines Image bereitstellt (mit nginx z. B.)
 	 --> im Browser unter http://localhost:4200 (oder 80/8080) läuft
 
+    Schritt 0: Datei "nginx.conf" im Frontend Project einfügen (root) mit folgendem Inhalt:
+
+               server {
+                 listen 80;
+                 server_name localhost;
+
+                 root /usr/share/nginx/html;
+                 index index.html;
+
+                 location / {
+                   try_files $uri $uri/ /index.html;
+                 }
+
+                 error_page 404 /index.html;
+
+                 location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg)$ {
+                   expires 6M;
+                   access_log off;
+                   add_header Cache-Control "public";
+                 }
+               }
+
+         --> Diese Datei wird beim Build (in Dokerfile) später zu nginx-server kopiert
+
     Schritt 1: Angular-Projekt builden (local testen)
 	        --> im Ordner CarConfigApp:
 			       : npm install
 				   : ng build --configuration production
 			      --> erzeugt dist/
+
 
    Schritt 2: Dockerfile erstellen (im Angular-Projektordner)
            --> Create Dockerfile  (Project heisst CarConfigApp in angular.json) <------------------
@@ -29,6 +54,7 @@ Angular-Projekt → Docker-Container, der:
 
 								# Copy compiled Angular app  // ab Angular 17 liegen die datein in browser
                                 COPY --from=builder /app/dist/CarConfigApp/browser /usr/share/nginx/html
+                                COPY ./nginx.conf /etc/nginx/nginx.conf
 
 								# Copy custom nginx config (optional)
 								# COPY nginx.conf /etc/nginx/nginx.conf

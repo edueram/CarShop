@@ -1,0 +1,59 @@
+# ----------------------------------
+# Maven / Java
+# ----------------------------------
+**/target/
+*.log
+*.class
+*.jar
+*.war
+*.iml
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.ipr
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
+
+# VSCode
+.vscode/
+
+# ----------------------------------
+# Angular / Frontend
+# ----------------------------------
+**/frontend_CarConfig/node_modules/
+**/frontend_CarConfig/dist/
+**/frontend_CarConfig/.angular/
+**/frontend_CarConfig/.env
+**/frontend_CarConfig/.output/
+
+# ----------------------------------
+# OS / Editor-spezifisch
+# ----------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+
+# ----------------------------------
+# Docker / Build Artefakte
+# ----------------------------------
+**/*.log
+**/.env
+**/docker/*.env
+**/docker/*/init*.sql
+**/docker-compose.override.yml
+
+# ----------------------------------
+# Logs
+# ----------------------------------
+logs/
+*.log
+*.tmp

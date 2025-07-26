@@ -7,25 +7,26 @@ Angular-Projekt → Docker-Container, der:
 
     Schritt 0: Datei "nginx.conf" im Frontend Project einfügen (root) mit folgendem Inhalt:
 
-               server {
-                 listen 80;
-                 server_name localhost;
+                  # nginx.conf
+                  worker_processes 1;
 
-                 root /usr/share/nginx/html;
-                 index index.html;
+                  events { worker_connections 1024; }
 
-                 location / {
-                   try_files $uri $uri/ /index.html;
-                 }
+                  http {
+                      include /etc/nginx/mime.types;
+                      default_type application/octet-stream;
+                      sendfile on;
 
-                 error_page 404 /index.html;
+                      server {
+                          listen 80;
+                          server_name localhost;
 
-                 location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg)$ {
-                   expires 6M;
-                   access_log off;
-                   add_header Cache-Control "public";
-                 }
-               }
+                          location / {
+                              root /usr/share/nginx/html;
+                              index index.html;
+                          }
+                      }
+                  }
 
          --> Diese Datei wird beim Build (in Dokerfile) später zu nginx-server kopiert
 

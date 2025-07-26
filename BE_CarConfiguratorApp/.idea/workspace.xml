@@ -78,7 +78,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "23",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Nkin/Edueram_Projects/CarShop/BE_CarConfiguratorApp",
+    "last_opened_file_path": "C:/Users/Nkin/Edueram_Projects/CarShop/BE_CarConfiguratorApp/frontend_CarConfig/src/environments",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,11 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\frontend_CarConfig\src\environments" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\myData" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\order-service\src\main\resources" />
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\notification-service\src\main\resources" />
-      <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\inventory-service\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nkin\Edueram_Projects\CarShop\BE_CarConfiguratorApp\myData" />
@@ -284,7 +284,7 @@
       <workItem from="1752315205700" duration="49828000" />
       <workItem from="1752585127806" duration="83112000" />
       <workItem from="1753084953046" duration="2985000" />
-      <workItem from="1753438835425" duration="10441000" />
+      <workItem from="1753438835425" duration="15573000" />
     </task>
     <servers />
   </component>

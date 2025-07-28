@@ -17,7 +17,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:24.0.1
     container_name: keycloak
-    command: start                           #--optimized
+    command: start
     environment:
       KC_DB: postgres
       KC_DB_URL_HOST: pgkeycloakDB
@@ -25,29 +25,21 @@ services:
       KC_DB_URL_DATABASE: keycloakDB
       KC_DB_USERNAME: hassan
       KC_DB_PASSWORD: pass
-      KC_DB_SCHEMA: public
+
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
 
-      # HTTP aktivieren (kein Zertifikat nötig)
       KC_HTTP_ENABLED: true
       KC_HOSTNAME_STRICT_HTTPS: false
-
-      KC_HOSTNAME: localhost
       KC_HOSTNAME_STRICT: false
-
-      #### Falls du später einen Reverse Proxy davor schaltest
-              #(z. B. nginx oder traefik mit HTTPS), kannst du das auch so erweitern: #
-      #KC_HOSTNAME: auth.my-domain.com
-      #KC_HOSTNAME_STRICT: true
-      #KC_HOSTNAME_STRICT_HTTPS: true
-      #KC_HOSTNAME_ADMIN_URL: https://auth.my-domain.com
-
-    ports:
-      - "8080:8080"
+      KC_HOSTNAME: localhost
 
     depends_on:
       - pgkeycloakDB
+    ports:
+      - "8084:8080"
+
+
 
   ##################### Car-service ####################
 
@@ -132,6 +124,7 @@ services:
   car-service:
     build:
       context: ./car-service
+    image: car-service:latest
     ports:
       - "8081:8081"
     environment:
@@ -143,6 +136,7 @@ services:
   caroption-service:
     build:
       context: ./carOption-service
+    image: caroption-service:latest
     ports:
       - "8082:8082"
     environment:
@@ -154,6 +148,7 @@ services:
   inventory-service:
     build:
       context: ./inventory-service
+    image: inventory-service:latest
     ports:
       - "8085:8085"
     environment:
@@ -165,6 +160,7 @@ services:
   notification-service:
     build:
       context: ./notification-service
+    image: notification-service:latest
     ports:
       - "8086:8086"
     environment:
@@ -176,6 +172,7 @@ services:
   order-service:
     build:
       context: ./order-service
+    image: order-service:latest
     ports:
       - "8083:8083"
     environment:
@@ -188,6 +185,7 @@ services:
   gateway-service:
     build:
       context: ./api-gateway
+    image: gateway-service:latest
     ports:
       - "9000:9000"
     environment:
@@ -207,6 +205,7 @@ services:
   frontend:
     build:
       context: ./frontend_CarConfig
+    image: frontend:latest
     ports:
       - "4200:80"
     depends_on:

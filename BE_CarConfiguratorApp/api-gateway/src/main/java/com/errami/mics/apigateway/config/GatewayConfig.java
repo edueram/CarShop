@@ -1,5 +1,6 @@
 package com.errami.mics.apigateway.config;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
@@ -13,10 +14,23 @@ public class GatewayConfig {
 
     @Value("${car.service.url}")
     private String carServiceUrl;
+
     @Value("${carOption.service.url}")
     private String carOptionServiceUrl;
+
     @Value("${order.service.url}")
     private String orderServiceUrl;
+
+    // zum Testen warum Cors nicht funktionieren bei dem Ausführen in Container:
+
+    @PostConstruct
+    public void printUrls() {
+        System.out.println("✅ Car URL: " + carServiceUrl);
+        System.out.println("✅ CarOption URL: " + carOptionServiceUrl);
+        System.out.println("✅ Order URL: " + orderServiceUrl);
+    }
+
+
 
 
     @Bean

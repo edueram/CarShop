@@ -4,6 +4,8 @@ package com.errami.mics.apigateway.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -44,6 +46,30 @@ public class SecurityConfig {
              .build();
  }
 
+
+    @Bean
+    @Order (Ordered.HIGHEST_PRECEDENCE)
+    public CorsWebFilter corsWebFilter() {
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+
+        // Für alle erlaubten Ursprünge (z. B. Angular, Postman etc.)
+        config.setAllowedOriginPatterns(Arrays.asList("*"));  // oder feiner: "http://localhost:*"
+
+        // HTTP-Methoden und Header
+        config.addAllowedMethod("*");
+        config.addAllowedHeader("*");
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", config);
+
+        return new CorsWebFilter(source);
+    }
+
+
+
+
+ /*  // Für Entwicklung funktioniert gut
     @Bean
     public CorsWebFilter corsWebFilter() {
         CorsConfiguration config = new CorsConfiguration();
@@ -58,10 +84,10 @@ public class SecurityConfig {
         return new CorsWebFilter(source);
     }
 
+*/
 
 
 }
-
 
 
 

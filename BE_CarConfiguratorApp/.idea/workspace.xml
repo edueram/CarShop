@@ -39,6 +39,14 @@
   "keyToString": {
     "Docker.api-gateway.keycloak-Container: Compose Deployment.executor": "Run",
     "Docker.api-gateway.pg-keycloakDB: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.kafka: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.keycloak: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.pg-carDB: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.pg-carOptDB: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.pg-inventoryDB: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.pg-orderDB: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.pgkeycloakDB: Compose Deployment.executor": "Run",
+    "Docker.docker-compose-development.yml.zookeeper: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.car-service: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.carOption-service: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.caroption-service: Compose Deployment.executor": "Run",
@@ -107,6 +115,7 @@
       <recent name="I:\Meine Ablage\Workspace\CarConfiguration\car-service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.errami.mics.notificationservice.service" />
       <recent name="com.errami.mics.orderservice.controller" />
       <recent name="com.errami.mics.orderservice.model" />
       <recent name="com.errami.mics.orderservice.service" />
@@ -123,7 +132,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml.frontend: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.ApiGatewayApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="car-service" />
       <method v="2">
@@ -133,6 +142,45 @@
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <module name="car-service" />
       <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.apigateway.ApiGatewayApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.apigateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarOptionServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="carOption-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.caroptionservice.CarOptionServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.caroptionservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="car-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.errami.mics.carservice.CarServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.errami.mics.carservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,88 +212,49 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose_build.yml.gateway-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose-development.yml.kafka: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="gateway-service" />
+              <option value="kafka" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-compose_build.yml" />
+          <option name="sourceFilePath" value="docker-compose-development.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose_build.yml.order-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+    <configuration name="docker-compose-development.yml.zookeeper: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
           <option name="services">
             <list>
-              <option value="order-service" />
+              <option value="zookeeper" />
             </list>
           </option>
-          <option name="sourceFilePath" value="docker-compose_build.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.frontend: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="frontend" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.gateway-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="gateway-service" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.pg-keycloakDB: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="pg-keycloakDB" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
+          <option name="sourceFilePath" value="docker-compose-development.yml" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.gateway-service: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.pg-keycloakDB: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose_build.yml.gateway-service: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose_build.yml.order-service: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose-development.yml.kafka: Compose Deployment" />
+      <item itemvalue="Docker.docker-compose-development.yml.zookeeper: Compose Deployment" />
       <item itemvalue="Spring Boot.NotificationServiceApplication" />
       <item itemvalue="Spring Boot.InventoryServiceApplication" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.CarOptionServiceApplication" />
+      <item itemvalue="Spring Boot.CarServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml.frontend: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.pg-keycloakDB: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose_build.yml.gateway-service: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose_build.yml.order-service: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.gateway-service: Compose Deployment" />
+        <item itemvalue="Spring Boot.ApiGatewayApplication" />
+        <item itemvalue="Spring Boot.CarOptionServiceApplication" />
+        <item itemvalue="Spring Boot.CarServiceApplication" />
+        <item itemvalue="Docker.docker-compose-development.yml.kafka: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose-development.yml.zookeeper: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
